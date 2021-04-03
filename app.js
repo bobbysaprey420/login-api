@@ -49,13 +49,14 @@ app.post('/user',async(req,res) => {
         res.status(406).send({"status":"error","error":"Email missing"});
     }
     else{
-        if(!password)
         res.status(406).send({"status":"error","error":"Password missing"});
         }
     }
 
 })
 
-app.listen(PORT, (req,res)=>{
+let server=app.listen(PORT, (req,res)=>{
     console.info(`Running on ${PORT}`)
 })
+
+module.exports=server;
